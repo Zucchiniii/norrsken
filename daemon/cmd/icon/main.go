@@ -41,7 +41,8 @@ func shieldDist(x, y float64) float64 {
 		// half-width shrinks as w*(1-t^2): straight sides that meet in a point.
 		t := (y - 0.02) / 0.34
 		if t >= 1 {
-			d = math.Hypot(x, y-0.36)
+			// Below the tip: outside, and far enough that no stroke cap is drawn.
+			d = math.Max(math.Hypot(x, y-0.36), 0.03)
 		} else {
 			half := w * (1 - t*t)
 			slope := w * 2 * t / 0.34
@@ -73,11 +74,11 @@ func pixel(u, v float64) (rgb, float64) {
 		col = mix(col, rgb{1, 1, 1}, s[2]*math.Exp(-d*d/0.00003))
 	}
 	// shield outline, slightly below centre
-	sd := shieldDist(x*1.28, (y-0.05)*1.28) / 1.28
+	sd := shieldDist(x*1.28, (y+0.02)*1.28) / 1.28
 	ring := 1 - smooth(0.012, 0.022, math.Abs(sd))
 	col = mix(col, rgb{0.95, 0.98, 1}, ring*0.95)
 	inside := 1 - smooth(-0.01, 0.0, sd)
-	col = mix(col, mix(col, rgb{0.02, 0.03, 0.07}, 0.55), inside*(1-ring))
+	col = mix(col, mix(col, rgb{0.02, 0.03, 0.07}, 0.72), inside*(1-ring))
 	return col, alpha
 }
 

@@ -1,0 +1,15 @@
+{
+  "id": "com.zucchiniii.norrsken",
+  "version": "0.1.1",
+  "vendor": "Zucchiniii",
+  "type": "web",
+  "main": "index.html",
+  "title": "Norrsken",
+  "appDescription": "NordVPN (NordLynx) for rooted webOS",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "bgColor": "#05070d",
+  "iconColor": "#05070d",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true
+}

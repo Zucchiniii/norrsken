@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Norrsken</title>
+<meta name="viewport" content="width=1920, height=1080, user-scalable=no">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cf7c8"/><stop offset=".55" stop-color="#36d6e7"/><stop offset="1" stop-color="#9a7bff"/></linearGradient></defs></svg>
+<div id="stage" class="st-idle">
+  <div class="sky" aria-hidden="true">
+    <i class="glow cold c1"></i><i class="glow cold c2"></i>
+    <i class="glow live l1"></i><i class="glow live l2"></i><i class="glow live l3"></i>
+    <div class="stars"></div>
+  </div>
+
+  <nav id="rail">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 41 10v12c0 11-7.3 19.3-17 22-9.7-2.7-17-11-17-22V10z" fill="none" stroke="url(#lg)" stroke-width="3.2" stroke-linejoin="round"/><path d="M13 27c4-7 8-10 11-10s7 3 11 10" fill="none" stroke="url(#lg)" stroke-width="3.2" stroke-linecap="round"/></svg>
+      <span>Norrsken</span>
+    </div>
+    <button class="f rail-item" data-screen="home"><svg viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/></svg><span>Status</span></button>
+    <button class="f rail-item" data-screen="locations"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9S14.6 18.4 12 21c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg><span>Locations</span></button>
+    <button class="f rail-item" data-screen="settings"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span>Settings</span></button>
+    <div class="rail-foot"><span class="dot"></span><span id="rail-status">Not protected</span></div>
+  </nav>
+
+  <main id="main">
+    <!-- STATUS -->
+    <section id="screen-home" class="screen" data-scope>
+      <div class="hero">
+        <div class="hero-text">
+          <div class="pill" id="h-pill"><span class="dot"></span><span id="h-state">Not protected</span></div>
+          <h1 id="h-title">You're not connected</h1>
+          <p class="sub" id="h-sub">Apps on this TV use your real IP address.</p>
+          <div class="actions">
+            <button class="f btn primary big" id="h-main">Quick connect</button>
+            <button class="f btn ghost big" id="h-choose">Choose location</button>
+          </div>
+          <p class="msg" id="h-msg"></p>
+        </div>
+        <div class="orb" id="orb" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="ring"></div>
+          <div class="spin"></div>
+          <div class="core">
+            <svg viewBox="0 0 64 64"><path class="shield" d="M32 6 52 13.5v14C52 41 43.5 51.5 32 56 20.5 51.5 12 41 12 27.5v-14z"/><path class="tick" d="M22.5 31.5 29 38l13-14"/><path class="lock" d="M24 30h16v12H24zM27 30v-4a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="stats" id="h-stats">
+        <div class="stat"><span class="k">Public IP</span><span class="v" id="s-ip">—</span><span class="s" id="s-ip2">&nbsp;</span></div>
+        <div class="stat"><span class="k">Connected for</span><span class="v" id="s-time">—</span><span class="s" id="s-server">&nbsp;</span></div>
+        <div class="stat"><span class="k">Data</span><span class="v" id="s-rx">—</span><span class="s" id="s-tx">&nbsp;</span></div>
+        <div class="stat"><span class="k">DNS</span><span class="v" id="s-dns">—</span><span class="s" id="s-dns2">&nbsp;</span></div>
+      </div>
+      <div class="recents" id="h-recents-wrap">
+        <h3>Recent</h3>
+        <div class="chips" id="h-recents"></div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section id="screen-locations" class="screen" data-scope hidden>
+      <header class="head">
+        <h2>Locations</h2>
+        <p class="sub">Pick a country or city. Norrsken connects to the least busy NordLynx server there.</p>
+      </header>
+      <div class="scroller" id="loc-scroll">
+        <h3 class="sec">Quick picks</h3>
+        <div class="grid" id="loc-popular"></div>
+        <h3 class="sec">All countries <span class="count" id="loc-count"></span></h3>
+        <div class="grid" id="loc-all"><p class="loading">Loading countries…</p></div>
+        <p class="hint">Tip: CH+ / CH− jumps a page.</p>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="screen-settings" class="screen" data-scope hidden>
+      <header class="head">
+        <h2>Settings</h2>
+      </header>
+      <div class="scroller">
+        <h3 class="sec">Connection</h3>
+        <div class="rows">
+          <button class="f row toggle" data-setting="autoConnect">
+            <span class="txt"><span class="t">Connect when the TV starts</span><span class="d">Reconnects to your last location every time the TV turns on.</span></span>
+            <span class="switch"><i></i></span>
+          </button>
+          <button class="f row toggle" data-setting="killSwitch">
+            <span class="txt"><span class="t">Kill switch</span><span class="d">If the VPN drops or Norrsken stops unexpectedly, block internet instead of exposing your real IP. Your home network stays reachable.</span></span>
+            <span class="switch"><i></i></span>
+          </button>
+          <button class="f row toggle" data-setting="threatProtection">
+            <span class="txt"><span class="t">Threat Protection Lite</span><span class="d">Use NordVPN DNS that refuses ad, tracker and malware domains.</span></span>
+            <span class="switch"><i></i></span>
+          </button>
+        </div>
+        <h3 class="sec">Account</h3>
+        <div class="rows">
+          <div class="row static"><span class="txt"><span class="t">NordVPN</span><span class="d" id="acc-state">Not linked</span></span></div>
+          <button class="f row" id="acc-relink"><span class="txt"><span class="t">Replace access token</span><span class="d">Link a new token, for example after the old one expired.</span></span><span class="chev">›</span></button>
+          <button class="f row danger" id="acc-unlink"><span class="txt"><span class="t">Unlink this TV</span><span class="d">Disconnects and deletes the stored token and key.</span></span><span class="chev">›</span></button>
+        </div>
+        <h3 class="sec">Help</h3>
+        <div class="rows">
+          <button class="f row" id="diag-open"><span class="txt"><span class="t">Diagnostics &amp; log</span><span class="d">What Norrsken found on this TV, and the latest log lines.</span></span><span class="chev">›</span></button>
+          <div class="row static"><span class="txt"><span class="t">About</span><span class="d" id="about">Norrsken · unofficial NordVPN client for rooted webOS. Not affiliated with Nord Security.</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINK ACCOUNT (full screen) -->
+    <section id="screen-link" class="screen full" data-scope hidden>
+      <div class="link">
+        <div class="link-text">
+          <div class="brand big"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 41 10v12c0 11-7.3 19.3-17 22-9.7-2.7-17-11-17-22V10z" fill="none" stroke="url(#lg)" stroke-width="3.2" stroke-linejoin="round"/><path d="M13 27c4-7 8-10 11-10s7 3 11 10" fill="none" stroke="url(#lg)" stroke-width="3.2" stroke-linecap="round"/></svg><span>Norrsken</span></div>
+          <h1>Link your NordVPN account</h1>
+          <ol class="steps">
+            <li><span class="n">1</span><span>On your phone, scan the code or open <b id="l-url">…</b></span></li>
+            <li><span class="n">2</span><span>Enter the code shown here, <b class="mono" id="l-pin">······</b></span></li>
+            <li><span class="n">3</span><span>Paste an access token: in <b>Nord Account › NordVPN</b>, scroll down to <b>Advanced settings</b>.</span></li>
+          </ol>
+          <div class="actions">
+            <button class="f btn ghost" id="l-type">Type the token on the TV</button>
+            <button class="f btn ghost" id="l-cancel" hidden>Back</button>
+          </div>
+          <div class="manual" id="l-manual" hidden>
+            <input class="f input" id="l-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Access token">
+            <button class="f btn primary" id="l-submit">Link</button>
+          </div>
+          <p class="msg" id="l-msg"></p>
+        </div>
+        <div class="qr-card">
+          <canvas id="l-qr" width="460" height="460"></canvas>
+          <div class="pin-big mono" id="l-pin2">······</div>
+          <div class="small" id="l-exp">&nbsp;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAN'T RUN (full screen) -->
+    <section id="screen-blocked" class="screen full" data-scope hidden>
+      <div class="blocked">
+        <div class="brand big"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 41 10v12c0 11-7.3 19.3-17 22-9.7-2.7-17-11-17-22V10z" fill="none" stroke="url(#lg)" stroke-width="3.2" stroke-linejoin="round"/></svg><span>Norrsken</span></div>
+        <h1 id="b-title">Norrsken needs a rooted TV</h1>
+        <p class="sub" id="b-body"></p>
+        <pre class="detail" id="b-detail"></pre>
+        <div class="actions"><button class="f btn primary" id="b-retry">Try again</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="sheet" class="sheet" hidden>
+    <div class="sheet-card" data-scope>
+      <h2 id="sheet-title"></h2>
+      <p class="sub" id="sheet-sub"></p>
+      <div class="sheet-body" id="sheet-body"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+</div>
+<script src="js/countries-fallback.js"></script>
+<script src="js/luna.js"></script>
+<script src="js/mock.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

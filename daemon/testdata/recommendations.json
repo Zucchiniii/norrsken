@@ -1,0 +1,488 @@
+[
+ {
+  "name": "Sweden #434",
+  "station": "86.106.103.115",
+  "hostname": "se434.nordvpn.com",
+  "load": 4,
+  "status": "online",
+  "locations": [
+   {
+    "id": 229,
+    "created_at": "2017-06-15 14:06:47",
+    "updated_at": "2017-06-15 14:06:47",
+    "latitude": 59.333333,
+    "longitude": 18.05,
+    "country": {
+     "id": 208,
+     "name": "Sweden",
+     "code": "SE",
+     "subdivision": null,
+     "city": {
+      "id": 7852919,
+      "identifier": "se_stockholm",
+      "name": "Stockholm",
+      "latitude": 59.333333,
+      "longitude": 18.05,
+      "dns_name": "stockholm",
+      "hub_score": 0
+     }
+    }
+   }
+  ],
+  "technologies": [
+   {
+    "id": 1,
+    "name": "IKEv2/IPSec",
+    "identifier": "ikev2",
+    "created_at": "2017-03-21 12:00:24",
+    "updated_at": "2017-09-05 14:20:16",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 1,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 3,
+    "name": "OpenVPN UDP",
+    "identifier": "openvpn_udp",
+    "created_at": "2017-05-04 08:03:24",
+    "updated_at": "2017-05-09 19:27:37",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 3,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 5,
+    "name": "OpenVPN TCP",
+    "identifier": "openvpn_tcp",
+    "created_at": "2017-05-09 19:28:14",
+    "updated_at": "2017-05-09 19:28:14",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 5,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 21,
+    "name": "HTTP Proxy (SSL)",
+    "identifier": "proxy_ssl",
+    "created_at": "2017-10-02 12:45:14",
+    "updated_at": "2017-10-02 12:45:14",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se434.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 21,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 23,
+    "name": "HTTP CyberSec Proxy (SSL)",
+    "identifier": "proxy_ssl_cybersec",
+    "created_at": "2017-10-02 12:50:49",
+    "updated_at": "2017-10-02 12:50:49",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se434.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 23,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 35,
+    "name": "Wireguard",
+    "identifier": "wireguard_udp",
+    "created_at": "2019-02-14 14:08:43",
+    "updated_at": "2019-02-14 14:08:43",
+    "metadata": [
+     {
+      "name": "public_key",
+      "value": "EdKGlWFPgosHt/9vGBfcIv39umAsMrvbOxw9c3CZMw4="
+     }
+    ],
+    "pivot": {
+     "technology_id": 35,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 51,
+    "name": "NordWhisper",
+    "identifier": "nordwhisper",
+    "created_at": "2024-10-07 10:17:17",
+    "updated_at": "2024-10-07 10:17:17",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 51,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 56,
+    "name": "NordWhisper UDP",
+    "identifier": "nordwhisper_udp",
+    "created_at": "2026-03-20 14:24:49",
+    "updated_at": "2026-03-20 14:24:49",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 56,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   }
+  ]
+ },
+ {
+  "name": "Sweden #585",
+  "station": "31.13.191.155",
+  "hostname": "se585.nordvpn.com",
+  "load": 4,
+  "status": "online",
+  "locations": [
+   {
+    "id": 229,
+    "created_at": "2017-06-15 14:06:47",
+    "updated_at": "2017-06-15 14:06:47",
+    "latitude": 59.333333,
+    "longitude": 18.05,
+    "country": {
+     "id": 208,
+     "name": "Sweden",
+     "code": "SE",
+     "subdivision": null,
+     "city": {
+      "id": 7852919,
+      "identifier": "se_stockholm",
+      "name": "Stockholm",
+      "latitude": 59.333333,
+      "longitude": 18.05,
+      "dns_name": "stockholm",
+      "hub_score": 0
+     }
+    }
+   }
+  ],
+  "technologies": [
+   {
+    "id": 1,
+    "name": "IKEv2/IPSec",
+    "identifier": "ikev2",
+    "created_at": "2017-03-21 12:00:24",
+    "updated_at": "2017-09-05 14:20:16",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 1,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 3,
+    "name": "OpenVPN UDP",
+    "identifier": "openvpn_udp",
+    "created_at": "2017-05-04 08:03:24",
+    "updated_at": "2017-05-09 19:27:37",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 3,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 5,
+    "name": "OpenVPN TCP",
+    "identifier": "openvpn_tcp",
+    "created_at": "2017-05-09 19:28:14",
+    "updated_at": "2017-05-09 19:28:14",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 5,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 21,
+    "name": "HTTP Proxy (SSL)",
+    "identifier": "proxy_ssl",
+    "created_at": "2017-10-02 12:45:14",
+    "updated_at": "2017-10-02 12:45:14",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se585.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 21,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 23,
+    "name": "HTTP CyberSec Proxy (SSL)",
+    "identifier": "proxy_ssl_cybersec",
+    "created_at": "2017-10-02 12:50:49",
+    "updated_at": "2017-10-02 12:50:49",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se585.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 23,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 35,
+    "name": "Wireguard",
+    "identifier": "wireguard_udp",
+    "created_at": "2019-02-14 14:08:43",
+    "updated_at": "2019-02-14 14:08:43",
+    "metadata": [
+     {
+      "name": "public_key",
+      "value": "EdKGlWFPgosHt/9vGBfcIv39umAsMrvbOxw9c3CZMw4="
+     }
+    ],
+    "pivot": {
+     "technology_id": 35,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 51,
+    "name": "NordWhisper",
+    "identifier": "nordwhisper",
+    "created_at": "2024-10-07 10:17:17",
+    "updated_at": "2024-10-07 10:17:17",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 51,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   },
+   {
+    "id": 56,
+    "name": "NordWhisper UDP",
+    "identifier": "nordwhisper_udp",
+    "created_at": "2026-03-20 14:24:49",
+    "updated_at": "2026-03-20 14:24:49",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 56,
+     "server_id": 1014375,
+     "status": "online"
+    }
+   }
+  ]
+ },
+ {
+  "name": "Sweden #434",
+  "station": "86.106.103.115",
+  "hostname": "offline.example",
+  "load": 4,
+  "status": "offline",
+  "locations": [
+   {
+    "id": 229,
+    "created_at": "2017-06-15 14:06:47",
+    "updated_at": "2017-06-15 14:06:47",
+    "latitude": 59.333333,
+    "longitude": 18.05,
+    "country": {
+     "id": 208,
+     "name": "Sweden",
+     "code": "SE",
+     "subdivision": null,
+     "city": {
+      "id": 7852919,
+      "identifier": "se_stockholm",
+      "name": "Stockholm",
+      "latitude": 59.333333,
+      "longitude": 18.05,
+      "dns_name": "stockholm",
+      "hub_score": 0
+     }
+    }
+   }
+  ],
+  "technologies": [
+   {
+    "id": 1,
+    "name": "IKEv2/IPSec",
+    "identifier": "ikev2",
+    "created_at": "2017-03-21 12:00:24",
+    "updated_at": "2017-09-05 14:20:16",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 1,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 3,
+    "name": "OpenVPN UDP",
+    "identifier": "openvpn_udp",
+    "created_at": "2017-05-04 08:03:24",
+    "updated_at": "2017-05-09 19:27:37",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 3,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 5,
+    "name": "OpenVPN TCP",
+    "identifier": "openvpn_tcp",
+    "created_at": "2017-05-09 19:28:14",
+    "updated_at": "2017-05-09 19:28:14",
+    "metadata": [],
+    "pivot": {
+     "technology_id": 5,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 21,
+    "name": "HTTP Proxy (SSL)",
+    "identifier": "proxy_ssl",
+    "created_at": "2017-10-02 12:45:14",
+    "updated_at": "2017-10-02 12:45:14",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se434.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 21,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 23,
+    "name": "HTTP CyberSec Proxy (SSL)",
+    "identifier": "proxy_ssl_cybersec",
+    "created_at": "2017-10-02 12:50:49",
+    "updated_at": "2017-10-02 12:50:49",
+    "metadata": [
+     {
+      "name": "proxy_hostname",
+      "value": "se434.proxy.nordvpn.com"
+     }
+    ],
+    "pivot": {
+     "technology_id": 23,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 35,
+    "name": "Wireguard",
+    "identifier": "wireguard_udp",
+    "created_at": "2019-02-14 14:08:43",
+    "updated_at": "2019-02-14 14:08:43",
+    "metadata": [
+     {
+      "name": "public_key",
+      "value": "EdKGlWFPgosHt/9vGBfcIv39umAsMrvbOxw9c3CZMw4="
+     }
+    ],
+    "pivot": {
+     "technology_id": 35,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 51,
+    "name": "NordWhisper",
+    "identifier": "nordwhisper",
+    "created_at": "2024-10-07 10:17:17",
+    "updated_at": "2024-10-07 10:17:17",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 51,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   },
+   {
+    "id": 56,
+    "name": "NordWhisper UDP",
+    "identifier": "nordwhisper_udp",
+    "created_at": "2026-03-20 14:24:49",
+    "updated_at": "2026-03-20 14:24:49",
+    "metadata": [
+     {
+      "name": "port",
+      "value": "443"
+     }
+    ],
+    "pivot": {
+     "technology_id": 56,
+     "server_id": 1013843,
+     "status": "online"
+    }
+   }
+  ]
+ }
+]

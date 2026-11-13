@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {
+      "id": "com.zucchiniii.norrsken",
+      "title": "Norrsken (NordVPN)",
+      "iconUri": "https://raw.githubusercontent.com/Zucchiniii/norrsken/main/app/largeIcon.png",
+      "manifestUrl": "https://github.com/Zucchiniii/norrsken/releases/latest/download/com.zucchiniii.norrsken.manifest.json",
+      "fullDescriptionUrl": "https://raw.githubusercontent.com/Zucchiniii/norrsken/main/docs/homebrew-description.html",
+      "shortDescription": "Unofficial NordVPN client for rooted TVs: NordLynx (WireGuard) for the whole TV, every country and city, phone pairing, kill switch, NordVPN DNS and connect-at-boot. Requires root."
+    }
+  ]
+}

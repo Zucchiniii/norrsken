@@ -1,8 +1,15 @@
 // Command icon renders the Norrsken app icons (aurora over a night sky with
-// a shield outline) as PNGs. Run: go run ./tools/icon <outdir>
+// a shield outline) as PNGs.
+//
+//	go run ./cmd/icon ../app ../docs/icon-512.png
+//
+// File names come from "icon" and "largeIcon" in <appdir>/appinfo.json. The
+// webOS launcher caches icons by file name, so when the artwork changes,
+// rename them there (icon_v3.png, ...) or TVs keep showing the old one.
 package main
 
 import (
+	"encoding/json"
 	"image"
 	"image/color"
 	"image/png"
@@ -120,7 +127,16 @@ func main() {
 	if len(os.Args) > 1 {
 		out = os.Args[1]
 	}
-	render(80, filepath.Join(out, "icon.png"))
-	render(130, filepath.Join(out, "largeIcon.png"))
-	render(512, filepath.Join(out, "icon-512.png"))
+	names := struct {
+		Icon      string `json:"icon"`
+		LargeIcon string `json:"largeIcon"`
+	}{"icon.png", "largeIcon.png"}
+	if b, err := os.ReadFile(filepath.Join(out, "appinfo.json")); err == nil {
+		json.Unmarshal(b, &names)
+	}
+	render(80, filepath.Join(out, names.Icon))
+	render(130, filepath.Join(out, names.LargeIcon))
+	if len(os.Args) > 2 {
+		render(512, os.Args[2])
+	}
 }

@@ -6,6 +6,7 @@ set -eu
 cd "$(dirname "$0")"
 
 VERSION="$(python3 -c 'import json;print(json.load(open("app/appinfo.json"))["version"])')"
+LARGE_ICON="$(python3 -c 'import json;print(json.load(open("app/appinfo.json"))["largeIcon"])')"
 BUILD_ID="$(date -u +%Y%m%d%H%M%S)"
 echo "== norrsken $VERSION (build $BUILD_ID)"
 
@@ -30,7 +31,7 @@ cat > dist/com.zucchiniii.norrsken.manifest.json <<EOF
   "type": "web",
   "title": "Norrsken",
   "appDescription": "NordVPN (NordLynx) for rooted webOS",
-  "iconUri": "https://raw.githubusercontent.com/Zucchiniii/norrsken/main/app/largeIcon.png",
+  "iconUri": "https://raw.githubusercontent.com/Zucchiniii/norrsken/main/app/$LARGE_ICON",
   "sourceUrl": "https://github.com/Zucchiniii/norrsken",
   "rootRequired": true,
   "ipkUrl": "$(basename "$IPK")",

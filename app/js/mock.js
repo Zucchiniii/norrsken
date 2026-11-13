@@ -16,7 +16,7 @@
   }
 
   var st = {
-    version: '0.1.2', state: 'idle', linked: mode !== 'unlinked', root: mode !== 'norooted', network: true,
+    version: '0.1.3', state: 'idle', linked: mode !== 'unlinked', root: mode !== 'norooted', network: true,
     settings: { autoConnect: true, killSwitch: false, threatProtection: false },
     recents: [
       { kind: 'country', countryId: 208, label: 'Sweden', code: 'SE' },
@@ -100,8 +100,8 @@
             if (q.pairlink) setTimeout(function () { st.linked = true; pair.linked = true; }, 6000);
             return resolve(pair);
           case 'pairStop': pair = null; return resolve(null);
-          case 'log': return resolve(['11-13 02:10:01 norrsken 0.1.2 (build 20261113120000) starting (pid 4242, boot=false)', '11-13 02:10:03 using se434.nordvpn.com (Stockholm, Sweden, load 4%)', '11-13 02:10:04 connected to se434.nordvpn.com']);
-          case 'diag': return resolve({ version: '0.1.2', build: '20261113120000', uid: 0, arch: 'arm', machine: 'armv7l', kernel: '5.4.268', webos: 'webOS TV 26', tun: true, iptables: '/usr/sbin/iptables', resolv: '/var/run/resolv.conf', nameservers: ['127.0.0.1'], uplink: true, lanIp: '192.168.1.50', autostart: true, mountNs: 'init', binary: '/media/developer/apps/usr/palm/applications/com.zucchiniii.norrsken/bin/norrsken', stateDir: '/var/lib/webosbrew/norrsken' });
+          case 'log': return resolve(['11-13 02:10:01 norrsken 0.1.3 (build 20261113120000) starting (pid 4242, boot=false)', '11-13 02:10:03 using se434.nordvpn.com (Stockholm, Sweden, load 4%)', '11-13 02:10:04 connected to se434.nordvpn.com']);
+          case 'diag': return resolve({ version: '0.1.3', build: '20261113120000', uid: 0, arch: 'arm', machine: 'armv7l', kernel: '5.4.268', webos: 'webOS TV 26', tun: true, iptables: '/usr/sbin/iptables', resolv: '/var/run/resolv.conf', nameservers: ['127.0.0.1'], uplink: true, lanIp: '192.168.1.50', autostart: true, mountNs: 'init', binary: '/media/developer/apps/usr/palm/applications/com.zucchiniii.norrsken/bin/norrsken', stateDir: '/var/lib/webosbrew/norrsken' });
         }
         reject(new Error('unknown command ' + cmd));
       }, cmd === 'status' ? 60 : 260);
